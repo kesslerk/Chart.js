@@ -132,7 +132,7 @@ module.exports = {
 				}
 
 				tickVal = significand * Math.pow(10, exp);
-			} while (exp < endExp || (exp === endExp && significand < endSignificand));
+			} while (isFinite(exp) && (exp < endExp || (exp === endExp && significand < endSignificand)));
 
 			var lastTick = valueOrDefault(generationOptions.max, tickVal);
 			ticks.push(lastTick);
